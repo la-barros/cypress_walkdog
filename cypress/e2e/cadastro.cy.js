@@ -87,7 +87,7 @@ describe('Realizar cadastro e validações de mensagens de erro', () => {
         });
         it('Campo CEP em branco', () => {
             cadastroPage.preencherDados(randomName(), randomEmail(), randomNumeric(11));
-            cadastroPage.preencherEndereco(null, randomNumeric(2), "APT 01");
+            cadastroPage.preencherEndereco(null, randomNumeric(2), "APT 03");
             cadastroPage.clickCep();
             cadastroPage.clickOpcoes("Adestrar");
             cadastroPage.clickUpload();
