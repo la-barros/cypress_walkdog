@@ -29,11 +29,11 @@ describe('Realizar cadastro e validações de mensagens de erro', () => {
                 expect(mensagem.text()).to.eq('Recebemos o seu cadastro e em breve retornaremos o contato.');
             });
         });
-        it.only('Cadastro com sucesso para cuidar dos cães', () => {
-            cadastroPage.clickOpcoes("cuidar");
+        it('Cadastro com sucesso para cuidar dos cães', () => {
+            cadastroPage.clickOpcoes("Cuidar");
         });
         it('Cadastro com sucesso para adestrar os cães', () => {
-            cadastroPage.clickOpcoes("adestrar");
+            cadastroPage.clickOpcoes("Adestrar");
         });
     });
     context('Validando mensagens de erro', () => {
@@ -41,7 +41,7 @@ describe('Realizar cadastro e validações de mensagens de erro', () => {
             cadastroPage.preencherDados(null, randomEmail(), randomNumeric(11));
             cadastroPage.preencherEndereco(54230555, randomNumeric(2), "APT 01");
             cadastroPage.clickCep();
-            cadastroPage.clickOpcoes("adestrar");
+            cadastroPage.clickOpcoes("Adestrar");
             cadastroPage.clickUpload();
             upload();
             cadastroPage.clickCadastrar();
@@ -53,7 +53,7 @@ describe('Realizar cadastro e validações de mensagens de erro', () => {
             cadastroPage.preencherDados(randomName(), null, randomNumeric(11));
             cadastroPage.preencherEndereco(54230555, randomNumeric(2), "APT 01");
             cadastroPage.clickCep();
-            cadastroPage.clickOpcoes("cuidar");
+            cadastroPage.clickOpcoes("Cuidar");
             cadastroPage.clickUpload();
             upload();
             cadastroPage.clickCadastrar();
@@ -65,7 +65,7 @@ describe('Realizar cadastro e validações de mensagens de erro', () => {
             cadastroPage.preencherDados(randomName(), randomEmail(), null);
             cadastroPage.preencherEndereco(54230555, randomNumeric(2), "APT 01");
             cadastroPage.clickCep();
-            cadastroPage.clickOpcoes("adesrar");
+            cadastroPage.clickOpcoes("Adestrar");
             cadastroPage.clickUpload();
             upload();
             cadastroPage.clickCadastrar();
@@ -77,7 +77,7 @@ describe('Realizar cadastro e validações de mensagens de erro', () => {
             cadastroPage.preencherDados(randomName(), randomEmail(), "077.285.958.89");
             cadastroPage.preencherEndereco(54230555, randomNumeric(2), "APT 01");
             cadastroPage.clickCep();
-            cadastroPage.clickOpcoes("cuidar");
+            cadastroPage.clickOpcoes("Cuidar");
             cadastroPage.clickUpload();
             upload();
             cadastroPage.clickCadastrar();
@@ -89,7 +89,7 @@ describe('Realizar cadastro e validações de mensagens de erro', () => {
             cadastroPage.preencherDados(randomName(), randomEmail(), randomNumeric(11));
             cadastroPage.preencherEndereco(null, randomNumeric(2), "APT 01");
             cadastroPage.clickCep();
-            cadastroPage.clickOpcoes("adestrar");
+            cadastroPage.clickOpcoes("Adestrar");
             cadastroPage.clickUpload();
             upload();
             cadastroPage.clickCadastrar();
@@ -101,7 +101,7 @@ describe('Realizar cadastro e validações de mensagens de erro', () => {
             cadastroPage.preencherDados(randomName(), randomEmail(), randomNumeric(11));
             cadastroPage.preencherEndereco(54230555, null, "APT 01");
             cadastroPage.clickCep();
-            cadastroPage.clickOpcoes("cuidar");
+            cadastroPage.clickOpcoes("Cuidar");
             cadastroPage.clickUpload();
             upload();
             cadastroPage.clickCadastrar();
@@ -113,7 +113,7 @@ describe('Realizar cadastro e validações de mensagens de erro', () => {
             cadastroPage.preencherDados(randomName(), randomEmail(), randomNumeric(11));
             cadastroPage.preencherEndereco(54230555, randomNumeric(2), "APT 01");
             cadastroPage.clickCep();
-            cadastroPage.clickOpcoes("adestrar");
+            cadastroPage.clickOpcoes("Adestrar");
             cadastroPage.clickUpload();
             cadastroPage.clickCadastrar();
             cadastroPage.validaMessagemErro().then((mensagem) => {

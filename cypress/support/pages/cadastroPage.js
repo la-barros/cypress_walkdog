@@ -1,5 +1,7 @@
 //<reference types ='cypress' />
 
+// import { el } from '@faker-js/faker';
+
 var ele = require('../elements/cadastroElements').CADASTRO
 const { set, click, get_text } = require('../actions')
 
@@ -36,36 +38,46 @@ class Cadastro {
             set(ele.campoComp, complemento);
         }
     }
-    clickOpcoes(opcoes) {
-        if (opcoes == "cuidar") {
-            click(ele.clickCuidar);
-        } else if (opcoes == "adestrar") {
-            click(ele.clickAdestrar);
+    clickOpcoes(atividadesExtras) {
+        if (atividadesExtras !== null) {
+            switch (atividadesExtras) {
+                case "Cuidar":
+                    click(ele.clickCuidar)
+                    break;
+                case "Adestrar":
+                click(ele.clickAdestrar)
+                    break;
+                default:
+                    "Campo obrigatorio"
+            }
         }
     }
+    
+    
+        
 
 
-    clickCep() {
-        click(ele.btnBuscarCep)
-    }
+        clickCep() {
+            click(ele.btnBuscarCep)
+        }
 
-    clickUpload() {
-        click(ele.clickUpload)
-    }
+        clickUpload() {
+            click(ele.clickUpload)
+        }
 
-    clickCadastrar() {
-        click(ele.btnCadastrar)
-    }
+        clickCadastrar() {
+            click(ele.btnCadastrar)
+        }
 
-    validaCadastroPage() {
-        return get_text(ele.validaPage)
+        validaCadastroPage() {
+            return get_text(ele.validaPage)
+        }
+        validaCadastro() {
+            return get_text(ele.messageSucesso)
+        }
+        validaMessagemErro() {
+            return get_text(ele.alertErro)
+        }
     }
-    validaCadastro() {
-        return get_text(ele.messageSucesso)
-    }
-    validaMessagemErro() {
-        return get_text(ele.alertErro)
-    }
-}
 
 export default new Cadastro();

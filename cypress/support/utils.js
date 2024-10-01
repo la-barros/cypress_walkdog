@@ -9,7 +9,7 @@ function randomEmail() {
 }
 
 function upload() {
-    cy.get('input[accept="image/*"]').selectFile("C:/cypress_walkdog/Images/cnh.png", { force: true })
+    cy.get('input[accept="image/*"]').selectFile("Images/cnh.png", { force: true })
 }
 
 const randomFirstname = () => {
