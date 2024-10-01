@@ -29,10 +29,10 @@ describe('Realizar cadastro e validações de mensagens de erro', () => {
                 expect(mensagem.text()).to.eq('Recebemos o seu cadastro e em breve retornaremos o contato.');
             });
         });
-        it('Cadastro com sucesso para cuidar dos cães', () => {
+        it('Cadastro com sucesso para Cuidar dos cães', () => {
             cadastroPage.clickOpcoes("Cuidar");
         });
-        it('Cadastro com sucesso para adestrar os cães', () => {
+        it('Cadastro com sucesso para Adestrar os cães', () => {
             cadastroPage.clickOpcoes("Adestrar");
         });
     });
